@@ -1,0 +1,92 @@
+<div class="card" style="max-width: 350px;">
+  <p class="card-header-title">
+    JT2000: Super Stable Calculator
+  </p>
+    <div class="card-content">
+      <div class="content">
+        <div class="columns is-mobile">
+          <input [(ngModel)]="inputString" class="input" type="text" disabled >
+        </div>
+        <hr>
+        <div class="columns is-mobile">
+          <div class="column is-three-quarters is-mobile">
+            <div class="columns is-multiline is-mobile">
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="1">1</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="2">2</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="3">3</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="4">4</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="5">5</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="6">6</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="7">7</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="8">8</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="9">9</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="clearInput()" class="button is-danger is-light">C</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="addToInput($event)" class="button is-info is-light" value="0">0</button>
+              </div>
+              <div class="column is-4">
+                <button (click)="startCalculation()" class="button is-primary is-light">=</button>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div class="columns is-multiline">
+              <div class="column is-full">
+                <button (click)="addToInput($event)" value="+" class="button is-primary is-light">+</button>
+              </div>
+              <div class="column">
+                <button (click)="addToInput($event)" value="-" class="button is-primary is-light">-</button>
+              </div>
+              <div class="column">
+                <button (click)="addToInput($event)" value="*" class="button is-primary is-light">*</button>
+              </div>
+              <div class="column">
+                <button (click)="addToInput($event)" value="/" class="button is-primary is-light">/</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div [ngClass]="{'modal':true, 'is-active':modalActive}">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">{{modalTitle}}</p>
+        <button class="delete" aria-label="close" (click)="toggleModal()"></button>
+      </header>
+      <section class="modal-card-body">
+        {{modalMessage}}
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button" (click)="toggleModal()">Close</button>
+      </footer>
+    </div>
+  </div>
