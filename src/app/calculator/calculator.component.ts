@@ -17,8 +17,8 @@ export class CalculatorComponent implements OnInit {
 
   //show or hide modal with provided message
   toggleModal = (title:string='', message:string=''):void => {
-    this.modalMessage = title;
-    this.modalTitle = message;
+    this.modalMessage = message;
+    this.modalTitle = title;
     this.modalActive = !this.modalActive;
   }
   //add num or operation to inputString
